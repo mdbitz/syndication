@@ -19,7 +19,7 @@ RSS Feeds, etc).
 
 ### Syndicate Content ###
 
-* When Publishing content select sitegroups within the "Syndication" metabox that the content should be syndicated 
+* When publishing or updating content select sitegroups within the "Syndication" metabox that the content should be syndicated 
 (pushed) to.
 
 ## Available Filters & Actions ##
@@ -94,6 +94,17 @@ the data pulled into this site or pushed to an external site.
 * **syn_pre_find_post_by_guid** <br/>
     Filter to obtain `post_id` on this site if meta is modified.<br/><br/>
     `$post_id = apply_filters( 'syn_pre_find_post_by_guid', false, $guid, $post, $site );`
+
+### CLI Commands ###
+If needed users can utilize wp-cli commands to trigger syndication of content (push and pull).
+
+```
+$ wp syndication
+usage: wp syndication push-all-posts [--post_type=<post-type>] [--paged=<page>]
+   or: wp syndication push_post --post_id=<post-id>
+   or: wp syndication pull_site --site_id=<site-id>
+   or: wp syndication pull-sitegroup --sitegroup=<sitegroup>
+```
 
 ## Contributing ##
 
